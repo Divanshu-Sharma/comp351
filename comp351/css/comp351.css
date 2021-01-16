@@ -1,0 +1,28 @@
+body{
+    background-color: #f3e6ff;
+}
+
+.jumbotron{
+    border: 0.6ex solid black;
+    text-align: center;
+    background-color:  #e6ccff;
+    padding: 0.5rem;
+}
+
+.list{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.back{
+        background-color: white;
+        border: 0.2ex solid black;
+        font-size: 1rem;
+        padding: 4px;
+        border-radius: 0.3rem;
+        width: 5rem;
+}
+
+.back:hover{
+    background-color: gray;
+}

@@ -1,0 +1,141 @@
+<html>
+<head>
+    <title>LAB-1</title>
+    <link rel="stylesheet" type="text/css" href="css/quizstyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+  <div class="head">
+    <h1 id="hone">Lab-1</h1>
+    <h2 id="htwo">Hard-coded Quiz</h2>
+  </div>
+
+    <div>
+      <form >
+        <ol>
+          <li>
+          <p>Which is the OR operator- ?? or || ?</p>
+          <input type="radio" name="ques1" value="??"> ?? <br />
+          <input type="radio" name="ques1" value="||"> || <br />
+          <input type="radio" name="ques1" value="none"> none <br />
+          <input type="radio" name="ques1" value="both a and b"> both a and b <br />
+          <p id="validate-Q1"> </p>
+          </li>
+          
+          <br />
+
+          <li>
+          <p>What will be the output for the code below? <br />
+            <span class="letStyle">let</span> user; <br />
+            <span class="alertStyle">alert</span>(user ?? <span class="variableStyle">"Anonymous"</span>); </p>
+          
+          <input type="radio" name="ques2" value="undefined/null"> undefined/null <br />
+          <input type="radio" name="ques2" value="Anonymous"> Anonymous <br />
+          <input type="radio" name="ques2" value="both a and b"> both a and b <br />
+          <input type="radio" name="ques2" value="error"> error <br />  
+          <p id="validate-Q2"></p>
+          </li>
+
+          <br />
+
+          <li>
+          <p>What will be the output for the code below? <br />
+            <span class="letStyle">let</span> user = <span class="john">"John"</span>; <br />
+            <span class="alertStyle">alert</span>(user ?? <span class="variableStyle">"Anonymous"</span>);</p>
+          <input type="radio" name="ques3" value="John"> John <br />
+          <input type="radio" name="ques3" value="Anonymous"> Anonymous <br />
+          <input type="radio" name="ques3" value="both a and b"> both a and b <br />
+          <input type="radio" name="ques3" value="error"> error <br />  
+          <p id="validate-Q3"></p>
+          </li>
+
+          <br />
+          
+          <li>
+          <p>What will be the output for the code below? <br />
+            <span class="letStyle">let</span> height = 0; <br />
+            <span class="alertStyle">alert</span>(height || 100); </p>
+          <input type="radio" name="ques4" value="0"> 0 <br />
+          <input type="radio" name="ques4" value="100"> 100 <br />
+          <input type="radio" name="ques4" value="error"> error <br />
+          <input type="radio" name="ques4" value="none"> none <br />  
+          <p id="validate-Q4"></p>
+          </li>
+
+          <br />
+          
+          <li>
+          <p>What will be the output for the code below? <br />
+            <span class="letStyle">let</span> height = 0; <br />
+            <span class="alertStyle">alert</span>(height ?? 100); </p>
+          <input type="radio" name="ques5" value="0"> 0 <br />
+          <input type="radio" name="ques5" value="100"> 100 <br />
+          <input type="radio" name="ques5" value="error"> error <br />
+          <input type="radio" name="ques5" value="none"> none <br /> 
+          <p id="validate-Q5"></p>
+          </li>
+          
+          <br />
+          
+          <li>
+          <p>What will be the output for the code below? <br />
+            <span class="letStyle">let</span> double = n => n * 2; <br />
+            <span class="alertStyle">alert</span>( double(3) ); </p>
+          <input type="radio" name="ques6" value="3"> 3 <br />
+          <input type="radio" name="ques6" value="6"> 6 <br />
+          <input type="radio" name="ques6" value="error"> error <br />
+          <input type="radio" name="ques6" value="null/undefined"> null/undefined <br />  
+          <p id="validate-Q6"></p>
+          </li>
+
+          <br />
+
+          <input id="submit" type="submit" value="Submit" onclick="submitAnswer(); return false;" />
+          <input id="reset" type="reset" value="Reset"  onclick="resetQuiz()" class="reset"/>
+        </ol>
+      </form>
+  </div>
+
+    <footer>
+      <a href="../../../comp351.html"><button class="back">Back</button></a>
+    </footer>
+
+  <script>
+      var answers=["||", "Anonynous", "John" , "100" , "0" , "6"];
+      var questions=["ques1", "ques2", "ques3", "ques4", "ques5", "ques6"];
+      var valiadation=["validate-Q1", "validate-Q2", "validate-Q3", "validate-Q4", "validate-Q5", "validate-Q6"];
+      function submitAnswer(){
+          for(var i=0; i<6; i++)
+          {
+              var radios = document.getElementsByName(questions[i]);
+              var val= "";
+              for (var j = 0, length = radios.length; j < length; j++) {
+                  if (radios[j].checked) {
+                      val = radios[j].value; 
+                      break;
+                  }
+              }
+
+              if(val == ""){
+                  document.getElementById(valiadation[i]).innerHTML="Please enter your answer";
+              }
+              else if (val == answers[i] ) {
+                  document.getElementById(valiadation[i]).innerHTML="Answer is correct!";
+              }
+              else {
+                  document.getElementById(valiadation[i]).innerHTML="Answer is wrong!";
+              }
+          }
+      }
+      function resetQuiz(){
+                for(var i=0; i<6; i++){
+                    document.getElementById(valiadation[i]).innerHTML="";
+                }
+            }
+  </script>
+
+</body>
+
+</html>
