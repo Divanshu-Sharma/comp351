@@ -1,5 +1,5 @@
 var xmlhttp = new XMLHttpRequest();
-var url = "https://gautamghai-quizdb.herokuapp.com/questions";
+var url = "https://divanshu-quizapp.herokuapp.com/questions";
 let correct = 0;
 let totalscore = 0;
 

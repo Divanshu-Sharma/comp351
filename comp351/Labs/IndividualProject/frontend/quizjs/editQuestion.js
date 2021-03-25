@@ -5,7 +5,7 @@ var correctAnswer = localStorage.getItem('answer')
 document.getElementById("question").value = question;
 
 var xmlhttp = new XMLHttpRequest();
-var url = `https://gautamghai-quizdb.herokuapp.com/${questionId}/options`;
+var url = `https://divanshu-quizapp.herokuapp.com/${questionId}/options`;
 
 xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -82,9 +82,7 @@ function editQuestion(id, ques, answer){
     var correctAnswer;
     for (let i = 0; i < answerVal.length; i++) {
         if (answerVal[i].checked) {
-            // do whatever you want with the checked radio
             answerNum = answerVal[i].value;
-            // only one radio can be logically checked, don't check the rest
             break;
         }
     }
@@ -101,7 +99,7 @@ function editQuestion(id, ques, answer){
 
     if(newQues != ques || correctAnswer != answer){
         var xmlhttp = new XMLHttpRequest();
-        var url = `https://gautamghai-quizdb.herokuapp.com/${id}`;
+        var url = `https://divanshu-quizapp.herokuapp.com/${id}`;
         console.log(newQues)
         console.log(correctAnswer)
         xmlhttp.onreadystatechange = function () {
@@ -168,7 +166,7 @@ function editOptions(options){
 
        newArr.map(data =>{
         var xmlhttp = new XMLHttpRequest();
-        var url = `https://gautamghai-quizdb.herokuapp.com/options/${data.optionsId}`;
+        var url = `https://divanshu-quizapp.herokuapp.com/options/${data.optionsId}`;
         console.log(data.optionValue)
         xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {

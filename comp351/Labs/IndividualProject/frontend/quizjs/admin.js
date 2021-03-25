@@ -1,5 +1,5 @@
 var xmlhttp = new XMLHttpRequest();
-var url = "https://gautamghai-quizdb.herokuapp.com/questions";
+var url = "https://divanshu-quizapp.herokuapp.com/questions";
 
 start();
 function start(){
@@ -49,7 +49,7 @@ function checkDelete(questionId){
 }
 
 function deleteQuestion(questionId) {
-    var deleteURL = `https://gautamghai-quizdb.herokuapp.com/${questionId}`;
+    var deleteURL = `https://divanshu-quizapp.herokuapp.com/${questionId}`;
     var xhr = new XMLHttpRequest();
     xhr.open("DELETE", deleteURL, true);
     xhr.setRequestHeader("Content-Type", "application/json");

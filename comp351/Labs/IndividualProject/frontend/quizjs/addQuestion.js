@@ -15,7 +15,6 @@ function showOption2(){
     document.getElementById("option4").style.display="block"
   }
   
-  // Add active class to the current button (highlight it)
   var header = document.getElementById("dropdown-btn");
   var btns = header.getElementsByClassName("dropdown-item");
   for (var i = 0; i < btns.length; i++) {
@@ -37,9 +36,7 @@ function showOption2(){
     var correctAnswer;
     for (let i = 0; i < answerVal.length; i++) {
         if (answerVal[i].checked) {
-            // do whatever you want with the checked radio
             Answer = answerVal[i].value;
-            // only one radio can be logically checked, don't check the rest
             break;
         }
     }
@@ -72,7 +69,7 @@ function showOption2(){
   
   function loadFormData(question, opt1, opt2, opt3, opt4, Answer) {
     console.log(` ${question}, ${opt1}, ${opt2}, ${opt3}, ${opt4},  ${Answer}`);
-    var url = "https://gautamghai-quizdb.herokuapp.com/question"
+    var url = "https://divanshu-quizapp.herokuapp.com/question"
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", url, true);
